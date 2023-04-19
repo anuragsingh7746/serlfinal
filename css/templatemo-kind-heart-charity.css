@@ -184,7 +184,7 @@ strong {
 }
 
 .section-overlay {
-  background: rgba(0, 0, 0, 0.35);
+  
   position: absolute;
   top: 0;
   left: 0;
@@ -761,17 +761,14 @@ strong {
   DONATE              
 -----------------------------------------*/
 .donate-section {
-  background-image: url('../images/different-people-doing-volunteer-work.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background-color:#ffffff;
   position: relative;
   padding-top: 150px;
   padding-bottom: 150px;
 }
 
 .donate-form {
-  background: var(--white-color);
+  background:#f0f8ff;
   border-radius: var(--border-radius-medium);
   position: relative;
   overflow: hidden;
@@ -1092,7 +1089,7 @@ blockquote::before {
 -----------------------------------------*/
 .custom-form .form-control,
 .input-group-file {
-  background-color: var(--section-bg-color);
+  background-color: white;
   box-shadow: none;
   border: 0;
   color: var(--p-color);
