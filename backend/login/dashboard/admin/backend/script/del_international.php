@@ -8,17 +8,13 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
-
-$sql = "SELECT id, name, designation, mentor, image, info, phone, email FROM researcher";
+$id = $_GET['id'];
+$sql = "DELETE FROM international WHERE id='$id'";
 $result = mysqli_query($conn, $sql);
-
-$data = array();
-while($row = mysqli_fetch_assoc($result)) {
-  $data[] = $row;
+if($result === 1){
+  echo "success";
 }
 
 mysqli_close($conn);
 
-header('Content-Type: application/json');
-echo json_encode($data);
 ?>

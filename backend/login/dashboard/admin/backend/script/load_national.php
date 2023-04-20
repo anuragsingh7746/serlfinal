@@ -9,7 +9,7 @@ if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql = "SELECT id, name, designation, mentor, image, info, phone, email FROM researcher";
+$sql = "SELECT id, names, mentor, link, title, content FROM national";
 $result = mysqli_query($conn, $sql);
 
 $data = array();

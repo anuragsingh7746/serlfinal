@@ -21,7 +21,11 @@ function loadList() {
         link.href = data[i].link;
         link.target = '_blank';
         link.innerHTML = '<b>' + '"' + data[i].title + '"' + '</b>';
-        content.innerHTML = data[i].content;
+        content.innerHTML =
+          data[i].content +
+          '<button class="social-icon-link bi-trash" style="line-height: 0px; border: none" onclick="delList(' +
+          data[i].id +
+          ')"></button>';
         listItem.appendChild(mentor);
         listItem.appendChild(link);
         listItem.appendChild(content);
@@ -30,7 +34,30 @@ function loadList() {
       }
     }
   };
-  xhttp.open('GET', '../../backend/script/load_publication.php', true);
+  xhttp.open(
+    'GET',
+    '../../../../../../backend/login/dashboard/admin/backend/script/load_publication.php',
+    true
+  );
+  xhttp.send();
+}
+
+function delList(id) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      var data = this.responseText;
+      console.log(data);
+      window.location.href =
+        '../../../../../../backend/login/dashboard/admin/publication.html';
+    }
+  };
+  xhttp.open(
+    'GET',
+    '../../../../../../backend/login/dashboard/admin/backend/script/del_publication.php?id=' +
+      id,
+    true
+  );
   xhttp.send();
 }
 
@@ -51,7 +78,11 @@ function loadList2() {
         link.href = data[i].link;
         link.target = '_blank';
         link.innerHTML = '<b>' + '"' + data[i].title + '"' + '</b>';
-        content.innerHTML = data[i].content;
+        content.innerHTML =
+          data[i].content +
+          '<button class="social-icon-link bi-trash" style="line-height: 0px; border: none" onclick="delList2(' +
+          data[i].id +
+          ')"></button>';
         listItem.appendChild(mentor);
         listItem.appendChild(link);
         listItem.appendChild(content);
@@ -60,7 +91,30 @@ function loadList2() {
       }
     }
   };
-  xhttp.open('GET', '../../backend/script/load_publication.php', true);
+  xhttp.open(
+    'GET',
+    '../../../../../../backend/login/dashboard/admin/backend/script/load_international.php',
+    true
+  );
+  xhttp.send();
+}
+
+function delList2(id) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      var data = this.responseText;
+      console.log(data);
+      window.location.href =
+        '../../../../../../backend/login/dashboard/admin/publication.html';
+    }
+  };
+  xhttp.open(
+    'GET',
+    '../../../../../../backend/login/dashboard/admin/backend/script/del_international.php?id=' +
+      id,
+    true
+  );
   xhttp.send();
 }
 
@@ -81,7 +135,11 @@ function loadList3() {
         link.href = data[i].link;
         link.target = '_blank';
         link.innerHTML = '<b>' + '"' + data[i].title + '"' + '</b>';
-        content.innerHTML = data[i].content;
+        content.innerHTML =
+          data[i].content +
+          '<button class="social-icon-link bi-trash" style="line-height: 0px; border: none" onclick="delList3(' +
+          data[i].id +
+          ')"></button>';
         listItem.appendChild(mentor);
         listItem.appendChild(link);
         listItem.appendChild(content);
@@ -90,6 +148,29 @@ function loadList3() {
       }
     }
   };
-  xhttp.open('GET', '../../backend/script/load_publication.php', true);
+  xhttp.open(
+    'GET',
+    '../../../../../../backend/login/dashboard/admin/backend/script/load_national.php',
+    true
+  );
+  xhttp.send();
+}
+
+function delList3(id) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      var data = this.responseText;
+      console.log(data);
+      window.location.href =
+        '../../../../../../backend/login/dashboard/admin/publication.html';
+    }
+  };
+  xhttp.open(
+    'GET',
+    '../../../../../../backend/login/dashboard/admin/backend/script/del_national.php?id=' +
+      id,
+    true
+  );
   xhttp.send();
 }
