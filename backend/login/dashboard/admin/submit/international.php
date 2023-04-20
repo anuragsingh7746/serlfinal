@@ -9,14 +9,17 @@ if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
 
-$name=$_GET['title'];
+$name=$_GET['name'];
+$mentor=$_GET['mentor'];
 $link=$_GET['link'];
+$title=$_GET['title'];
+$content=$_GET['content'];
 
 
-$sql = "INSERT INTO books (`title`,`link`) VALUES ('$title','$link') ";
+$sql = "INSERT INTO international (`name`,`mentor`, `link`, `title`, `content`) VALUES ('$name','$mentor', '$link', '$title', '$content') ";
 
 if($conn->query($sql)===TRUE){
-    header("location:../resource.html");
+    header("location:../publication.html");
 }
 mysqli_close($conn);
 ?>

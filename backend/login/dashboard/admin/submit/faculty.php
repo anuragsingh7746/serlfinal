@@ -17,7 +17,7 @@ $email=$_GET['email'];
 $image=$_GET['image'];
 $site=$_GET['site'];
 
-$sql = "INSERT INTO profiles VALUES ('$name','$designation', '$address', '$phone', '$email', '$image', '$site') ";
+$sql = "INSERT INTO profiles (`name`,`designation`, `address`, `phone`, `email`, `image`, `site`) VALUES ('$name','$designation', '$address', '$phone', '$email', '$image', '$site') ";
 if($conn->query($sql)===TRUE){
     header("location:../faculty.html");
 }
