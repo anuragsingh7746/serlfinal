@@ -14,7 +14,7 @@ $year=$_GET['year'];
 $topic=$_GET['topic'];
 
 
-$sql = "INSERT INTO mtech_project VALUES ('$name','$year', '$topic') ";
+$sql = "INSERT INTO (`name`,`year`, `topic`) mtech_project VALUES ('$name','$year', '$topic') ";
 if($conn->query($sql)===TRUE){
     header("location:../project.html");
 }

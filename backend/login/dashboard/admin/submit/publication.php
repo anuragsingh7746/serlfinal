@@ -16,7 +16,7 @@ $title=$_GET['title'];
 $content=$_GET['content'];
 
 
-$sql = "INSERT INTO research_papers VALUES ('$name','$mentor', '$link', '$title', '$content') ";
+$sql = "INSERT INTO research_papers (`name`,`mentor`, `link`, `title`, `content`) VALUES ('$name','$mentor', '$link', '$title', '$content') ";
 
 if($conn->query($sql)===TRUE){
     header("location:../publication.html");
