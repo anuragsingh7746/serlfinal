@@ -13,7 +13,7 @@ $name=$_GET['title'];
 $link=$_GET['link'];
 
 
-$sql = "INSERT INTO books (`title`,`link`) VALUES ('$title','$link') ";
+$sql = "INSERT INTO books VALUES ('$title','$link') ";
 
 if($conn->query($sql)===TRUE){
     header("location:../resource.html");

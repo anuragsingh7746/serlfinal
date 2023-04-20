@@ -17,7 +17,7 @@ $email=$_GET['email'];
 $image=$_GET['image'];
 $info=$_GET['info'];
 
-$sql = "INSERT INTO (`name`,`designation`, `mentor`, `image`, `info`, `phone`, `email`) researcher VALUES ('$name','$designation', '$mentor', '$image', '$info', '$phone', '$email') ";
+$sql = "INSERT INTO researcher VALUES ('$name','$designation', '$mentor', '$image', '$info', '$phone', '$email') ";
 if($conn->query($sql)===TRUE){
     header("location:../researcher.html");
 }
