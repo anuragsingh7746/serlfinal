@@ -12,7 +12,7 @@ function loadList() {
         var section = document.createElement('section');
         section.className = 'about-section section-padding';
         section.innerHTML =
-          ' <div class="container"> <div class="row"> <div class="col-lg-6 col-md-5 col-12" style="padding-top: 60px"> <img src="images/portrait-volunteer-who-organized-donations-charity.jpg" class="about-image ms-lg-auto bg-light shadow-lg img-fluid" alt="" /> </div> <div class="col-lg-5 col-md-7 col-12"> <div class="custom-text-block"> <h2 class="mb-0">' +
+          ' <div class="container"> <div class="row"> <div class="col-lg-6 col-md-5 col-12" style="padding-top: 60px"> <img src="'+ data[i].image +'" class="about-image ms-lg-auto bg-light shadow-lg img-fluid" alt="" /> </div> <div class="col-lg-5 col-md-7 col-12"> <div class="custom-text-block"> <h2 class="mb-0">' +
           data[i].name +
           '</h2> <p class="text-muted mb-lg-4 mb-md-4"> ' +
           data[i].designation +

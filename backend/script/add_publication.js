@@ -60,7 +60,7 @@ function loadList2() {
       }
     }
   };
-  xhttp.open('GET', '../../backend/script/load_publication.php', true);
+  xhttp.open('GET', '../../backend/script/load_international.php', true);
   xhttp.send();
 }
 
@@ -90,6 +90,6 @@ function loadList3() {
       }
     }
   };
-  xhttp.open('GET', '../../backend/script/load_publication.php', true);
+  xhttp.open('GET', '../../backend/script/load_national.php', true);
   xhttp.send();
 }
