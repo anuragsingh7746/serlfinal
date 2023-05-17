@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
-$username = "root";
-$password = "_Mysqllocalsecured1.";
+$username = "ansh";
+$password = "Ansh@4321#@#";
 $dbname = "serl";
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
