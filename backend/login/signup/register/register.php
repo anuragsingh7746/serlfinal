@@ -16,7 +16,7 @@ $count = $student->count_row($check_token);
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>ClassFeed</title>
+    <title>SERL-IIITA</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -74,7 +74,7 @@ if($count === 1){
         width="225"
         height="225"
       />
-      <h1 class="h3 mb-3 fw-normal">Register</h1>
+      <h1 class="h3 mb-3 fw-normal" style="color:#5a6f80">Register</h1>
   <div class="row mb-2">
       <div class="form-floating col-md-6">
         <input
@@ -192,12 +192,13 @@ if($count === 1){
         id="button"
         type="submit"
         onclick="submit2()"
+        style="background-color:#5a6f80;border:none"
         disabled
       >
         Register
       </button>
       <p class="mt-5 mb-3 text-muted">
-        Copyright &copy; 2023 ClassFeed<br />
+        Copyright &copy; 2023 SERL<br />
         IIIT - Allahabad
       </p>
     </main>

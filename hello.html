@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>IIITA-SERL</title>
+    <!-- CSS FILES -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="css/bootstrap-icons.css" rel="stylesheet" />
+
+    <link href="css/templatemo-kind-heart-charity.css" rel="stylesheet" />
+     </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg bg-light shadow-lg">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+            src="images/logo.png"
+            class="logo img-fluid"
+            alt="Kind Heart Charity"
+          />
+          <span>
+            Software Engineering Research Lab
+            <small>SERL-IIITA</small>
+          </span>
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a
+                class="nav-link click-scroll"
+                href="index.html"
+                style="color: #717275"
+                >Home</a
+              >
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link click-scroll"
+                href="faculty.html"
+                style="color: #5bc1ac"
+                >Faculty</a
+              >
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link click-scroll" href="researcher.html"
+                >Researchers</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link click-scroll" href="contributers.html"
+                >Contributers</a
+              >
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link click-scroll" href="publication.html"
+                >Publications</a
+              >
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link click-scroll" href="project.html">Projects</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link click-scroll" href="resource.html"
+                >Resources</a
+              >
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link click-scroll" href="contact.html">Contact</a>
+            </li>
+
+            <li class="nav-item ms-3">
+              <a
+                class="nav-link custom-btn custom-border-btn btn"
+                href="backend/login/index.html"
+                >Login</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <p id="name"><span></span></p>
+  <p id="id"><span></span></p>
+  <p id="status"></p>
+
+<script>
+    // JavaScript code to retrieve the 'name' and 'id' parameters
+    function getUrlParameter(name) {
+      name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+      var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+      var results = regex.exec(window.location.search);
+      return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    }
+
+    // Retrieve the 'name' parameter and split it into name and ID
+    var nameParam = getUrlParameter('name');
+    var nameParts = nameParam.split(' (');
+    var name = nameParts[0];
+    var id = nameParts[1] ? nameParts[1].replace(')', '') : '';
+
+    console.log(name); // Output the value of the 'name'
+    console.log(id); // Output the value of the 'id'
+
+    window.addEventListener('DOMContentLoaded', function() {
+      var nameElement = document.getElementById('name');
+      var idElement = document.getElementById('id');
+      var nameSpan = nameElement.querySelector('span');
+      var idSpan = idElement.querySelector('span');
+      nameSpan.textContent = name;
+      idSpan.textContent = id;
+
+      // Send an AJAX request to the server to check for a match
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          var response = this.responseText;
+          var statusElement = document.getElementById('status');
+          if (response === 'success') {
+            statusElement.style.display = 'none'; // Hide the status element
+            // Redirect to another page
+            window.location.href = 'index.html?name=' + encodeURIComponent(name) + '&id=' + encodeURIComponent(id);
+          } else {
+            nameElement.style.display = 'none'; // Hide the name element
+            idElement.style.display = 'none'; // Hide the ID element
+            statusElement.textContent = 'No data found.';
+          }
+        }
+      };
+
+      // Make a POST request to a server-side script (e.g., search.php) that handles the database search
+      xhttp.open('POST', 'backend/script/search.php', true);
+      xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+      xhttp.send('name=' + encodeURIComponent(name) + '&id=' + encodeURIComponent(id));
+    });
+  </script>
+
+
+
+
+  <!-- JAVASCRIPT FILES -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/click-scroll.js"></script>
+    <script src="js/counter.js"></script>
+    <script src="js/custom.js"></script>
+  </body>
+</html>
+
